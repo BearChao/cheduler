@@ -10,6 +10,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import datetime
 from pushover import Client
 
+from tasks.qqvideo import QQVideoData
 from tasks.youku import YoukuData
 
 client = Client("umfy11bfzx28a7hx4jswf7i71mg4te", api_token="a4rvvdmwnt8sobjif8rborp64uhrnf")
@@ -24,8 +25,13 @@ client = Client("umfy11bfzx28a7hx4jswf7i71mg4te", api_token="a4rvvdmwnt8sobjif8r
 def job():
     v = YoukuData()
     client.send_message(title="优酷视频播放量",
-                        message=v.get_play_num()+"\n"+v.get_play_num_more(),
+                        message="总播放量："+v.get_play_num()+"\n"+v.get_play_num_more()
                         )
+    s = QQVideoData()
+    client.send_message(title="优酷视频播放量",
+                        message="总播放量："+s.get_play_num()+"\n"+s.get_play_num_more()
+                        )
+job()
 # BlockingScheduler
 scheduler = BlockingScheduler()
 scheduler.add_job(job, 'cron', day_of_week='1-5', hour=6, minute=30)
