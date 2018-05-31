@@ -13,12 +13,12 @@ from pushover import Client
 from tasks.youku import YoukuData
 
 client = Client("umfy11bfzx28a7hx4jswf7i71mg4te", api_token="a4rvvdmwnt8sobjif8rborp64uhrnf")
-client.send_message(message="测试内容\nceshineirong<br><H1>word</H1>",
-                    html=1,
-                    title="测试HTML_image",
-                    url="https://pushover.net/api#html",
-                    url_title="api地址",
-                    attachment=("image.jpg", open("/Users/zynick/Pictures/IMG_856F4CDA6635-1.jpeg", "rb"), "image/jpeg"))
+# client.send_message(message="测试内容\nceshineirong<br><H1>word</H1>",
+#                     html=1,
+#                     title="测试HTML_image",
+#                     url="https://pushover.net/api#html",
+#                     url_title="api地址",
+#                     attachment=("image.jpg", open("/Users/zynick/Pictures/IMG_856F4CDA6635-1.jpeg", "rb"), "image/jpeg"))
 
 # 输出时间
 def job():
