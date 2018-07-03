@@ -28,11 +28,11 @@ def job():
                         message="总播放量："+v.get_play_num()+"\n"+v.get_play_num_more()
                         )
     s = QQVideoData()
-    client.send_message(title="优酷视频播放量",
+    client.send_message(title="腾讯视频播放量",
                         message="总播放量："+s.get_play_num()+"\n"+s.get_play_num_more()
                         )
 job()
 # BlockingScheduler
 scheduler = BlockingScheduler()
-scheduler.add_job(job, 'cron', day_of_week='1-5', hour=6, minute=30)
+scheduler.add_job(job, 'cron', day_of_week='1', hour=7, minute=30)
 scheduler.start()
