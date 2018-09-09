@@ -50,7 +50,7 @@ ufmp_service_status()
 
 # 添加任务
 scheduler.add_job(uf_video_play_num, 'cron', day_of_week='1', hour=7, minute=30)
-scheduler.add_job(ufmp_service_status(),'cron',minute='0/30')
+#scheduler.add_job(ufmp_service_status(),'cron',minute='0/30')
 
 #开始任务
 scheduler.start()
